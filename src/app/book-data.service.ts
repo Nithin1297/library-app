@@ -11,4 +11,13 @@ export class BookDataService {
       (res) => res.json()
     );
   }
+  addBookP(newBook : Ibook){
+    return fetch(`https://669a42859ba098ed61fef71c.mockapi.io/Library`, {
+      method: 'POST',
+      body: JSON.stringify(newBook),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    }).then((res) => res.json());
+  }
 }
