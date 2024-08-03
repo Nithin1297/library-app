@@ -1,13 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 import { BookDataService } from '../book-data.service';
 import { Ibook } from '../ibook';
 
 @Component({
   selector: 'app-book',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule],
+  imports: [MatCardModule, MatButtonModule,MatChipsModule,],
   templateUrl: './book.component.html',
   styleUrl: './book.component.scss',
 })

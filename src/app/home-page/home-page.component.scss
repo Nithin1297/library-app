@@ -1,23 +1,24 @@
 
-.movie-list-container {
+.book-list-container {
     display: grid;
     margin: 50px 0px;
     justify-content: space-evenly;
+    // padding-left: 1rem;
   }
   
   
-   .List-of-movies{
+   .List-of-book{
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
    }
   
   
-   @media (max-width: 1250px) {
-    .List-of-movies{
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      gap: 3rem;
-     }
-   }
+//    @media (max-width: 1250px) {
+//     .List-of-book{
+//       display: flex;
+//       flex-wrap: wrap;
+//       flex-direction: column;
+//       gap: 3rem;
+//      }
+//    }

@@ -24,7 +24,7 @@ loadBooks() {
   this.bookdataService
     .getDataP()
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       this.allBooks = data;
       this.isLoading = false;
     })

@@ -1,31 +1,9 @@
-<!-- <p>home-page works!</p>
-<div class="movie-list-container">
-    <div class="List-of-movies">
-      @if(isLoading){
-        <h1>Loading...</h1>
-        } 
-      @for (book of  allBooks; track book.id) {
-      <app-book
-        [book]="book"
-        [id] = "book.id"
-      />  
-      }
-    </div>
-  </div>
-  <h1>{{ msg }}</h1> -->
-
-<p>home-page works!</p>
-<div class="movie-list-container">
-  <div class="List-of-movies">
+<div class="book-list-container">
+  <div class="List-of-book">
     @if (isLoading) {
     <h1>Loading...</h1>
-    }
-    @for (book of allBooks; track $index) {
-    <app-book
-      
-      [book]="book"
-      [id]="book.id"
-    ></app-book>
+    } @for (book of allBooks; track $index) {
+    <app-book [book]="book" [id]="book.id"></app-book>
     }
   </div>
 </div>
