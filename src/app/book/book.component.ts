@@ -12,6 +12,7 @@ import { Ibook } from '../ibook';
   styleUrl: './book.component.scss',
 })
 export class BookComponent {
+  @Input() id!: number;
   @Input() book = {
     id: 1,
     title: 'To Kill a Mockingbird',
