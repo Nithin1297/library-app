@@ -34,7 +34,7 @@ export class HomePageComponent {
         this.msg = 'Something went wrong 🥲';
       });
   }
-  trackById(index: number, book: Ibook): number {
+  trackById(index: number, book: Ibook): string {
     return book.id;
   }
   deleteOneBook(book: Ibook) {

@@ -3,8 +3,10 @@
     @if (isLoading) {
     <h1>Loading...</h1>
     } @for (book of allBooks; track book.id) {
-    <app-book [book]="book" [id]="book.id" 
-    (deleteBookEvent)="deleteOneBook(book)"
+    <app-book
+      [book]="book"
+      [id]="book.id"
+      (deleteBookEvent)="deleteOneBook(book)"
     ></app-book>
     }
   </div>

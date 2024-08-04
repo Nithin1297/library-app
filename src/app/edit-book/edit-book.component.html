@@ -1,0 +1,75 @@
+<form [formGroup]="bookForm" (ngSubmit)="editBook()" class="edit-book-form">
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="Name" formControlName="title" />
+
+    @if(title?.touched && title?.hasError('required') ){
+    <mat-error>Title is <strong>required</strong></mat-error>
+    } @if(title?.touched && title?.hasError('minlength') ){
+    <mat-error>Please provide full Book title 😁</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Author</mat-label>
+    <input matInput placeholder="Author" formControlName="author" />
+    @if(author?.touched && author?.hasError('required') ){
+    <mat-error>Author is <strong>required</strong></mat-error>
+    }@if(author?.touched && author?.hasError('minlength') ){
+    <mat-error>Please provide full Author Name 😁</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Image</mat-label>
+    <input matInput placeholder="https://" formControlName="imageUrl" />
+
+    @if(imageUrl?.touched && imageUrl?.hasError('required') ){
+    <mat-error>ImageUrl is <strong>required</strong></mat-error>
+    }@if(imageUrl?.touched && imageUrl?.hasError('pattern') ){
+    <mat-error>Pattern should start with https://</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-radio-group aria-label="Select an option" formControlName="status">
+    <mat-label>Select Book status : </mat-label>
+    <mat-radio-button value="Currently Reading"
+      >Currently Reading</mat-radio-button
+    >
+    <mat-radio-button value="Plan to Read">Plan to Read</mat-radio-button>
+    <mat-radio-button value="Have Read">Have Read</mat-radio-button>
+  </mat-radio-group>
+  @if(status?.touched && status?.hasError('required') ){
+  <mat-error>Status is <strong>required</strong></mat-error>
+  }
+
+  <mat-form-field>
+    <mat-label>category</mat-label>
+    <input matInput placeholder="Fiction" formControlName="category" />
+    @if(category?.touched && category?.hasError('required') ){
+    <mat-error>category is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Publication Date</mat-label>
+    <input
+      matInput
+      [matDatepicker]="datepicker"
+      formControlName="publicationDate"
+    />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+    <mat-datepicker #datepicker>
+      <mat-datepicker-actions>
+        <button mat-button matDatepickerCancel>Cancel</button>
+        <button mat-raised-button matDatepickerApply>Apply</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
+
+    @if(publicationDate?.touched && publicationDate?.hasError('required') ){
+    <mat-error>publication Date is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+
+  <button mat-raised-button type="submit">Edit Book</button>
+</form>
