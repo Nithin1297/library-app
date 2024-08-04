@@ -1,0 +1,29 @@
+.example-card {
+    display: flex;
+    flex-direction: row;
+    max-width: 800px;
+    max-height: 700px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .side-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .title-author{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 4rem;
+  }
+  .whole-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+  }

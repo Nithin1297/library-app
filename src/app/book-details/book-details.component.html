@@ -1,0 +1,32 @@
+<div class="whole-container">
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+          <img
+            mat-card-image
+            src="{{ book.imageUrl }}"
+            alt="Photo of Author"
+            width="100%"
+            height="300px"
+          />
+        </mat-card-header>
+        <div class="side-container">
+            <div class="title-author">
+                <mat-card-title>Title : {{ book.title }}</mat-card-title>
+                <mat-card-subtitle>Written by the Author "<strong>{{ book.author }}</strong>"</mat-card-subtitle>
+            </div>
+              <mat-card-content class="content-container">
+            <mat-card-footer class="example-card-footer">
+              <p>
+                <strong>{{ book.title }}</strong> is a  <strong>{{ book.category }}</strong> genre book!
+              </p>
+              <p>
+                Published on  <strong>{{ book.publicationDate }}</strong>
+              </p>
+              <p>
+                You are  <strong>{{ book.status }} </strong>it!
+              </p>
+            </mat-card-footer>
+              </mat-card-content>
+        </div>
+    </mat-card>
+</div>

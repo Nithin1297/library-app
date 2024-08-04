@@ -5,17 +5,27 @@ import { MatChipsModule } from '@angular/material/chips';
 import { BookDataService } from '../book-data.service';
 import { Ibook } from '../ibook';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 // import { EventEmitter } from 'stream';
 
 @Component({
   selector: 'app-book',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatChipsModule, MatIconModule, RouterLink],
+  imports: [
+    MatCardModule,
+    MatButtonModule,
+    MatChipsModule,
+    MatIconModule,
+    RouterLink,
+  ],
   templateUrl: './book.component.html',
   styleUrl: './book.component.scss',
 })
 export class BookComponent {
+  constructor(private router: Router) {}
+  openBookOverview() {
+    this.router.navigate(['/details', this.book.id]);
+  }
   @Input() id!: string;
   @Output() deleteBookEvent: EventEmitter<Ibook> = new EventEmitter<Ibook>();
   deleteBook() {
