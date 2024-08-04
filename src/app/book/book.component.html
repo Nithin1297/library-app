@@ -4,11 +4,14 @@
     <mat-card-subtitle>🖊️ {{ book.author }}</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image src = "{{ book.imageUrl }}" alt="Photo of Author" width="100%" height="300px" />
-  <mat-card-content>
+  <mat-card-content class="content-container">
+    <div class="buttons">
+      <button mat-button (click)="deleteBook()"><mat-icon>delete</mat-icon></button>
+    </div>
     <mat-card-footer class="example-card-footer">
       <p>Genre : <strong>{{book.category}}</strong></p>
       <p>Publication Date : <strong>{{book.publicationDate}}</strong></p>
-      <p>Staus : <strong>{{book.status}}</strong></p>
+      <p>Status : <strong>{{book.status}}</strong></p>
     </mat-card-footer>
   </mat-card-content>
   <!-- <mat-card-actions>

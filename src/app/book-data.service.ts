@@ -6,12 +6,12 @@ import { Ibook } from './ibook';
 })
 export class BookDataService {
   constructor() {}
-  getDataP() : Promise<Ibook[]> {
+  getDataP(): Promise<Ibook[]> {
     return fetch('https://669a42859ba098ed61fef71c.mockapi.io/Library').then(
       (res) => res.json()
     );
   }
-  addBookP(newBook : Ibook){
+  addBookP(newBook: Ibook) {
     return fetch(`https://669a42859ba098ed61fef71c.mockapi.io/Library`, {
       method: 'POST',
       body: JSON.stringify(newBook),
@@ -19,5 +19,11 @@ export class BookDataService {
         'Content-type': 'application/json',
       },
     }).then((res) => res.json());
+  }
+  deleteBookP(book: Ibook) {
+    return fetch(
+      `https://669a42859ba098ed61fef71c.mockapi.io/Library/${book.id}`,
+      { method: 'DELETE' }
+    ).then((res) => res.json());
   }
 }
